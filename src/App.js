@@ -5,8 +5,11 @@ import { connect } from 'react-redux';
 function App(props) {
   console.log(props);
   return (
-    <div className="app">
-      <h3 style={{textAlign:"center"}}>This Value is Reducer State Value: <span style={{color:"gray"}}>{props.name}</span></h3>
+    <div className="app" style={{textAlign:"center"}}>
+      <h1>React and Redux Example</h1>
+      <h3>This Value is Reducer State Value: <span style={{color:"gray"}}>{props.name}</span></h3>
+
+      <button onClick={ ()=>{ props.hanldeChange("Era") }}>Change It</button>
     </div>
   );
 }
@@ -17,4 +20,12 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, null)(App);
+const mapDispatchToPorps = (dispatch) => {
+  return {
+    hanldeChange:(name) => {
+      dispatch({type:"CHANGE_NAME", payload: name})
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToPorps)(App);

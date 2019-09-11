@@ -4,6 +4,12 @@ const isState = {
 }
 
 const reducer = (state=isState, action) => {
+  if(action.type === 'CHANGE_NAME'){
+    return {
+      ...state,
+      name: action.payload
+    }
+  }
   return state;
 }
 
