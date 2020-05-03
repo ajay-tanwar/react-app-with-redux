@@ -3,7 +3,6 @@ import './App.css';
 import { connect } from 'react-redux';
 
 function App(props) {
-  console.log(props);
   return (
     <div className="app" style={{textAlign:"center"}}>
       <h1>React and Redux Example</h1>

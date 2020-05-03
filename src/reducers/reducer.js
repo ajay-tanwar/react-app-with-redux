@@ -10,6 +10,13 @@ const reducer = (state=isState, action) => {
       name: action.payload
     }
   }
+
+  if(action.type === 'ADD_NAME'){
+    return {
+      ...state,
+      name: action.payload
+    }
+  }
   return state;
 }
 
